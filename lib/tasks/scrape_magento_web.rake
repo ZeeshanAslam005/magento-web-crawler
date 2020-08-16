@@ -1,4 +1,4 @@
-desc "script to scrape products from magento-test.finology.com"
+desc 'script to scrape products from magento-test.finology.com'
 require 'open-uri'
 
 task scrape_magento_web: :environment do
@@ -14,7 +14,7 @@ task scrape_magento_web: :environment do
 
     product = ProductHandler.new(href)
     product.parse
-	product.save
+    product.save
     product.save_realted_links
     href_array << Product.unvisited_links if href_array.empty?
     href_array = href_array.flatten
