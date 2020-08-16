@@ -6,7 +6,7 @@ To start scraping run below command and that will do the job
 
 bundle exec rake scrape_magento_web
 
-It will not scrape page who are already visited.
+It will scrape only those pages who are not already visited.
 A product will not list more than once.
 
 On its root page usually named "index" there will show the products scraped from https://magento-test.finology.com.my.

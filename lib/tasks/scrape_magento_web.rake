@@ -7,6 +7,7 @@ task scrape_magento_web: :environment do
   href_array << BASE_URL
   href_array << Product.unvisited_links #due to some reason if job stop, start visiting only unvisiting links
   href_array = href_array.flatten #will return a one-dimensional array
+  puts "STARTING"
   until href_array.empty?
 
     href = href_array.shift #removes the first href from array
@@ -19,4 +20,5 @@ task scrape_magento_web: :environment do
     href_array << Product.unvisited_links if href_array.empty? #insert unvisited links if current links are visited
     href_array = href_array.flatten
   end
+  puts "FINISHED: SCRAPED ONLY THOSE PAGES WHO ARE NOT ALEADY VISITED"
 end
