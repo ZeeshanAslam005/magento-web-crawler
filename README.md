@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There is a script name "scrape_magento_web" which wll scrape information from https://magento-test.finology.com.my.
 
-Things you may want to cover:
+To start scraping run below command and that will do the job
 
-* Ruby version
+bundle exec rake scrape_magento_web
 
-* System dependencies
+It will not scrape page who are already visited.
+A product will not list more than once.
 
-* Configuration
+On its root page usually named "index" there will show the products scraped from https://magento-test.finology.com.my.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run rails server by run command: rails s
+You can see scrapped pages in table form on http://localhost:3000/

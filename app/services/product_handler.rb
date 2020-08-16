@@ -63,7 +63,7 @@ class ProductHandler
 
   def save_realted_links
     related_hrefs.each do |href|
-      Product.find_or_create_by(href: href)
+      Product.find_or_create_by(href: href) #only create if link not already exist
     end
   end
 end
