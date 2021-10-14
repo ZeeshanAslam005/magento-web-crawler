@@ -1,0 +1,20 @@
+
+<h2>Finology Products</h2>
+
+<table>
+  <tr>
+  <th>Name</th>
+  <th>Price</th>
+	<th>Details</th>
+	<th>Extra-Information</th>	
+  </tr>
+
+  <% @products.each do |product|%>
+  <tr>
+    <td><%= product.name%></td>
+    <td><%= product.price%></td>
+	  <td class="details-width"><%= simple_format product.details.strip.gsub('•','<br />•').html_safe%></td>
+	  <td><%= product.extra_information.strip.gsub("\n",'').gsub("Style",'<br />Style : ').gsub("Material",'<br />Material : ').gsub("Pattern",'<br />Pattern : ').gsub("Climate",'<br />Climate : ').html_safe%></td>
+  </tr>
+  <%end%>
+</table>
